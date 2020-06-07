@@ -72,16 +72,16 @@
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                         <div class="sb-sidenav-menu-heading">Penyewaan</div>
-                        <a class="nav-link" href="charts.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-money-bill-alt"></i></div>
-                            Pembayaran
-                        </a><a class="nav-link" href="/transaksi">
+                        <a class="nav-link" href="/transaksi">
                             <div class="sb-nav-link-icon"><i class="fas fa-credit-card"></i></div>
                             Transaksi
-                        </a>
-                    </a><a class="nav-link" href="tables.html">
+                        </a><a class="nav-link" href="/detailtransaksi">
                         <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                         Detail Transaksi
+                        </a>
+                    </a><a class="nav-link" href="charts.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-money-bill-alt"></i></div>
+                            Pembayaran
                     </a>
                     </div>
                 </div>

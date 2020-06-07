@@ -34,41 +34,63 @@
                 </div>
             </div>
 
-            <div class="col-xl-6 col-md-6 mb-1 mt-4">
-                <div class="card border-left-primary shadow h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    Nama Kamera</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">Sony
-                                </div>
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    Seri</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">A9</div>
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    Harga Sewa</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. 300.000</div>
-                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    Jumlah Sewa</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <table class="table table-bordered" id="dataTable">
+                                        <thead>
+                                            <tr>
+                                                <th>ID Kamera</th>
+                                                <th>Nama Kamera</th>
+                                                <th>Seri Kamera</th>
+                                                <th>Harga Sewa</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($transaksi ?? '' as $in=> $val)
+                                            <tr>
+                                                <td>{{($val->nama_alat)}}</td>
+                                                <td>{{$val->jumlah}}</td>
+                                                <td>{{$val->harga_sewa}}</td>
+                                                <td>{{$val->harga_sewa}}</td>
+                                                <td><a href="{{route('kamera.edit',$val->id)}}">
+                                                    <button type="submit" class="btn btn-outline-info"> Update</button></a>
+                                                    <form action="{{route('kamera.destroy',$val->id)}}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+            <style>
+                    .button {
+                    background-color: #44A9D9; /* Green */
+                    border: none;
+                    color: white;
+                    padding: 20px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 12px;
+                    margin: 4px 1px;
+                    cursor: pointer;
+                    }
 
+                    
+                    .button {border-radius: 12px;}
+                    
+            </style>
         <div class="col-lg-12">
         <div class="row">
 
             <div class="col-xl-4 mt-5 form-group">
-                <button type=" submit">Tambah Lagi
+                <button class="botton button" type=" submit">Tambah Lagi
                 </button>
             </div>
 
             <div class="mt-5 form-group">
-                <button type=" submit">Checkout
+                <button class="botton button" type=" submit">Checkout
                 </button>
             </div>
 
